@@ -7,9 +7,69 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
+    <style type="text/css">
+        ul.headBar{
+            list-style-type:none;
+            max-width:740px;
+            margin:0 auto;
+        }
+        ul.headBar li{
+             display:inline;
+             padding:8px;
+             padding-left:16px;
+             padding-right:16px;
+             font-size:30px;
+             width:120px;
+             height:40px;
+             border: 2px solid blue;
+             border-radius:5px;
+             margin:15px;
+        }
+
+        h1{
+            padding-top:50px;
+            margin-bottom:-25px
+        }
+        h4{
+            padding-top:15px;
+            text-indent:5px
+        }
+
+        ul.footer{
+            list-style-type:none;
+            display:inline;
+        }
+        .column{
+            float: left;
+            margin: 0 60px;
+            font-size:15px;
+            color:#535353;
+            display:inline-block;
+            opacity:0.8;
+        }
+        .column li{
+            padding-bottom:10px;
+        }
+        footer{
+        }
+        
+    </style>
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <img src="~/Images/Logo.png" alt="Gradiens Logo" style="height:150px;width:100px;float:left;margin-right:10px;margin-left:200px"/>
+    <h1>Gradiens</h1>
+    <h4>A Travel Agency</h4>
+    <br />
+    <div>
+        <ul class="headBar">
+            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+            <li>Recommended</li>
+            <li>Plan a Trip</li>
+        </ul>
+    </div>
+    <br />
+    <br />
+    <!--<div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -28,12 +88,32 @@
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
-    </div>
+    </div> -->
     <div class="container body-content">
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <div class="column">
+                <ul class="footer">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>Recommended</li>
+                    <li>Plan a Trip</li>
+                </ul>
+            </div>
+            <div class="column">
+                <ul class="footer">
+                    <li>@Html.ActionLink("About Us","About","Home")</li>
+                    <li>Contact Us</li>
+                    <li>FAQs</li>
+                </ul>
+            </div>
+            <div class="column">
+                <ul class="footer">
+                    <li>Privacy Policy</li>
+                    <li>Terms of Service</li>
+                </ul>
+            </div>
+            <p style="clear:both;text-align:center;">&copy; @DateTime.Now.Year - Gradiens</p>
         </footer>
     </div>
 
