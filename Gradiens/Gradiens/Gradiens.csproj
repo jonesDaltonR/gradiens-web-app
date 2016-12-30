@@ -174,8 +174,23 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AdminModels.cs" />
+    <Compile Include="Models\AirplaneModels.cs" />
+    <Compile Include="Models\AirportModels.cs" />
+    <Compile Include="Models\BusModels.cs" />
+    <Compile Include="Models\BusStopModels.cs" />
+    <Compile Include="Models\CruiseModels.cs" />
+    <Compile Include="Models\HarborModels.cs" />
+    <Compile Include="Models\HotelModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\LocationModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\RegUserModels.cs" />
+    <Compile Include="Models\ReservationModels.cs" />
+    <Compile Include="Models\SeatingResModels.cs" />
+    <Compile Include="Models\TrainModels.cs" />
+    <Compile Include="Models\TrainStationModels.cs" />
+    <Compile Include="Models\UserModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
