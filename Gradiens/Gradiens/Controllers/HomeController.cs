@@ -26,5 +26,20 @@ namespace Gradiens.Controllers
 
             return View();
         }
+
+        public ActionResult Terms()
+        {
+            return View();
+        }
+
+        public ActionResult Privacy()
+        {
+            return View();
+        }
+
+        public ActionResult FAQ()
+        {
+            return View();
+        }
     }
 }

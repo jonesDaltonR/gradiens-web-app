@@ -103,14 +103,14 @@
             <div class="column">
                 <ul class="footer">
                     <li>@Html.ActionLink("About Us","About","Home")</li>
-                    <li>Contact Us</li>
-                    <li>FAQs</li>
+                    <li>@Html.ActionLink("Contact Us", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("FAQs", "FAQ", "Home")</li>
                 </ul>
             </div>
             <div class="column">
                 <ul class="footer">
-                    <li>Privacy Policy</li>
-                    <li>Terms of Service</li>
+                    <li>@Html.ActionLink("Privacy Policy", "Privacy", "Home")</li>
+                    <li>@Html.ActionLink("Terms of Service", "Terms", "Home")</li>
                 </ul>
             </div>
             <p style="clear:both;text-align:center;">&copy; @DateTime.Now.Year - Gradiens</p>
