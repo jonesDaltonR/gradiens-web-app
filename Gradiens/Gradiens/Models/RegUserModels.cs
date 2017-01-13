@@ -28,5 +28,7 @@ namespace Gradiens.Models
         [Required]
         [Display(Name = "Location ID")]
         public long REG_USER_LOCATION_ID { get; set; }
+
+        public bool DELETE_STAT { get; set; }
     }
 }

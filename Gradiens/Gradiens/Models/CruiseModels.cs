@@ -28,5 +28,7 @@ namespace Gradiens.Models
         [Required]
         [Display(Name = "Seating ID")]
         public long SEATING_ID { get; set; }
+
+        public bool DELETE_STAT { get; set; }
     }
 }

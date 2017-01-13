@@ -44,5 +44,7 @@ namespace Gradiens.Models
         [Display(Name = "Email Address")]
         [EmailAddress] // Must be in a valid email format i.e. me@email.com
         public string USER_EMAIL { get; set; }
+
+        public bool DELETE_STAT { get; set; }
     }
 }

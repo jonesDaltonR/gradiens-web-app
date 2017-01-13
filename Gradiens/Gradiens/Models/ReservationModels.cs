@@ -39,5 +39,7 @@ namespace Gradiens.Models
         [Display(Name = "Active reservation?")]
         public bool RESERVATION_ACTIVE { get; set; }
 
+        public bool DELETE_STAT { get; set; }
+
     }
 }

@@ -43,5 +43,7 @@ namespace Gradiens.Models
         [Display(Name = "Total")]
         [UIHint("Currency")] // Takes decimal values that are valid currency values
         public decimal COST { get; set; }
+
+        public bool DELETE_STAT { get; set; }
     }
 }

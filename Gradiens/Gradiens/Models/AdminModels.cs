@@ -17,5 +17,7 @@ namespace Gradiens.Models
         [Required]
         [Display(Name = "Active admin status")]
         public bool ADMIN_CONTROLS { get; set; }
+
+        public bool DELETE_STAT { get; set; }
     }
 }

@@ -20,5 +20,7 @@ namespace Gradiens.Models
         [Required]
         [Display(Name = "Airport Name")]
         public string AIRPORT_NAME { get; set; }
+
+        public bool DELETE_STAT { get; set; }
     }
 }
