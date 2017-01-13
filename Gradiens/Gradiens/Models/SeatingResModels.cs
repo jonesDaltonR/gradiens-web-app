@@ -32,5 +32,7 @@ namespace Gradiens.Models
         [Required]
         [Display(Name = "Departure Date")]
         public DateTime SEATING_RES_DEPART_DATE { get; set; }
+
+        public bool DELETE_STAT { get; set; }
     }
 }

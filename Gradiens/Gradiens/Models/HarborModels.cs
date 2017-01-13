@@ -20,5 +20,7 @@ namespace Gradiens.Models
         [Required]
         [Display(Name = "Harbor Location ID")]
         public long HARBOR_LOCATION { get; set; }
+
+        public bool DELETE_STAT { get; set; }
     }
 }

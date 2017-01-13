@@ -181,6 +181,7 @@
     <Compile Include="Models\BusModels.cs" />
     <Compile Include="Models\BusStopModels.cs" />
     <Compile Include="Models\CruiseModels.cs" />
+    <Compile Include="Models\GDbContext.cs" />
     <Compile Include="Models\HarborModels.cs" />
     <Compile Include="Models\HotelModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />

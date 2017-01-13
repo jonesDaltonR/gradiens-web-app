@@ -20,5 +20,7 @@ namespace Gradiens.Models
         [Required]
         [Display(Name = "Bus Stop Location ID")]
         public long BUS_STOP_LOCATION { get; set; }
+
+        public bool DELETE_STAT { get; set; }
     }
 }

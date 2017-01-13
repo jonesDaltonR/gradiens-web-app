@@ -38,5 +38,7 @@ namespace Gradiens.Models
         [RegularExpression(@"^\d+(\.\d)?$", ErrorMessage = "Cannot have more than one decimal point value")]
         [Range(-90, 90)] // Limit valid input between -90 and 90
         public decimal LOCATION_LATITUDE { get; set; }
+
+        public bool DELETE_STAT { get; set; }
     }
 }
