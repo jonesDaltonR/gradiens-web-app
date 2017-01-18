@@ -176,13 +176,12 @@
     <Compile Include="Models\GDbContext.cs" />
     <Compile Include="Models\HarborModels.cs" />
     <Compile Include="Models\HotelModels.cs" />
-<<<<<<< HEAD
     <Compile Include="Models\LocationModels.cs" />
-=======
+
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\LocationModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
->>>>>>> 01dad999cbc5008a013ff24f20c3a8b7d87ba44c
+
     <Compile Include="Models\RegUserModels.cs" />
     <Compile Include="Models\ReservationModels.cs" />
     <Compile Include="Models\SeatingResModels.cs" />
