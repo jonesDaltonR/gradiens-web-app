@@ -13,5 +13,9 @@ namespace Gradien.Controllers
         {
             return View();
         }
+        public ActionResult Feedback()
+        {
+            return View();
+        }
     }
 }
