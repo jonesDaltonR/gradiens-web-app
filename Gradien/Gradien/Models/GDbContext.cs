@@ -4,7 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 
-namespace Gradiens.Models
+namespace Gradien.Models
 {
     public class GDbContext : DbContext
     {

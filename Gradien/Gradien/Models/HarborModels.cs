@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 
-namespace Gradiens.Models
+namespace Gradien.Models
 {
     // Harbor object that is holds information for the HARBOR table
     public class HarborModels
