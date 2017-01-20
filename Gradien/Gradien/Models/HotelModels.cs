@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 
-namespace Gradiens.Models
+namespace Gradien.Models
 {
     // Hotel object that is holds information for the HOTEL table
     public class HotelModels

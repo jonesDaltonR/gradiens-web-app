@@ -5,7 +5,7 @@ using System.Web;
 using System.ComponentModel.DataAnnotations;
 
 
-namespace Gradiens.Models
+namespace Gradien.Models
 {
     // Admin object that is holds information for the ADMIN table
     public class AdminModels

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -65,8 +65,9 @@
     <div>
         <ul class="headBar">
             <li>@Html.ActionLink("Home", "Index", "Home")</li>
-            <li>Recommended</li>
-            <li>Plan a Trip</li>
+            <!-- <li>Recommended</li> -->
+            <li>@Html.ActionLink("Plan A Trip", "MakingATrip", "MakingATrip")</li>
+            <li>@Html.ActionLink("Support/Contact Us", "Support", "Support")</li>
         </ul>
     </div>
     <br />
@@ -99,7 +100,8 @@
                 <ul class="footer">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>Recommended</li>
-                    <li>Plan a Trip</li>
+                    <li>@Html.ActionLink("Plan A Trip", "MakingATrip", "MakingATrip")</li>
+                    <li>@Html.ActionLink("Support/Contact Us", "Support", "Support")</li>
                 </ul>
             </div>
             <div class="column">
