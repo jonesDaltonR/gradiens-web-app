@@ -3,5 +3,49 @@
     ViewBag.Title = "Feedback";
 }
 
-<h2>Feedback</h2>
+<h2>@ViewBag.Title</h2>
+
+<p>Use this to form to send us feed back or concerns you have with the website.</p>
+
+<form class="form-horizontal">
+    <fieldset id="generalInfo">
+        <legend><span>General Information</span></legend>
+
+        <p>Give us useful information like your name and email address so we can have more infomation when contacting you</p>
+
+        <div class="form-group">
+
+                <label class="control-label col-sm-1" for="idname">
+                    Name:
+                </label>
+            <div class="col-sm-3">
+                <input type="text" name="name" id="idname" placeholder="Enter name" class="form-control" />
+            </div>
+            <br />
+        </div>
+
+        <div class="form-group">
+            
+                <label class="control-label col-sm-1" for="email">
+                    Email:
+                </label>
+            <div class="col-sm-4">
+                <input type="email" id="email" placeholder="Enter email address" class="form-control" />
+            </div>
+        </div>
+    </fieldset>
+    <fieldset id="Feedback">
+        <legend><span>Feedback</span></legend>
+
+        <p>Describe the problem you are facing or give us feedback about what you like about our website and what you don't. <br /> The more specific you are about what aspects and page you do/don't like the better we can improve our site!</p>
+
+        <label>
+            <textarea id="idFeedback" class="form-control" name="feedback" placeholder="Type your feedback here..." rows="8" cols="80"></textarea>
+        </label>
+    </fieldset>
+    <fieldset>
+        <!--ToDo: Figure out a good way to send the form information to the Gradiens support email: contact.Gradiens@gmail.com-->
+        <input type="submit" class="btn btn-info" value="Submit" />
+    </fieldset>
+</form>
 

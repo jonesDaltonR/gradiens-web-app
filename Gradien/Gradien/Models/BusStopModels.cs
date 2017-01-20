@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 
-namespace Gradiens.Models
+namespace Gradien.Models
 {
     // Bus Stop object that is holds information for the BUS_STOP table
     public class BusStopModels

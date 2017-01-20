@@ -9,7 +9,26 @@ namespace Gradien.Controllers
     public class SupportController : Controller
     {
         // GET: Support
-        public ActionResult Index()
+        public ActionResult Contact()
+        {
+            return View();
+        }
+
+        public ActionResult Feedback()
+        {
+            return View();
+        }
+
+        public ActionResult SubmitTicket()
+        {
+            return View();
+        }
+
+        public ActionResult Support()
+        {
+            return View();
+        }
+        public ActionResult Feedback()
         {
             return View();
         }

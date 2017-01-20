@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace Gradiens
+namespace Gradien
 {
     public class BundleConfig
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 
-namespace Gradiens.Models
+namespace Gradien.Models
 {
     // Seating Reservation object that is holds information for the SEATING_RES table
     public class SeatingResModels
