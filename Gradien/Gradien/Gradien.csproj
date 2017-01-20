@@ -164,10 +164,6 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-<<<<<<< HEAD
-=======
-
->>>>>>> f41c12bde64d16a478dc2f390f4f1041e39c16a7
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -183,10 +179,6 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
-<<<<<<< HEAD
-=======
-
->>>>>>> f41c12bde64d16a478dc2f390f4f1041e39c16a7
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
     <Content Include="Images\florida.jpeg" />
@@ -272,18 +264,9 @@
     <Content Include="Views\MakingATrip\Hotels.cshtml" />
     <Content Include="Views\Support\SubmitTicket.cshtml" />
     <Content Include="Views\Support\Feedback.cshtml" />
-<<<<<<< HEAD
     <Content Include="Scripts\jquery-1.9.1.min.map" />
     <Content Include="Scripts\jquery-3.1.1.min.map" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
-=======
-
-    <Content Include="Scripts\jquery-1.9.1.min.map" />
-
-    <Content Include="Scripts\jquery-3.1.1.min.map" />
-    <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
-
->>>>>>> f41c12bde64d16a478dc2f390f4f1041e39c16a7
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
