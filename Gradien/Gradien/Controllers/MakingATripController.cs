@@ -9,9 +9,20 @@ namespace Gradien.Controllers
     public class MakingATripController : Controller
     {
         // GET: MakingATrip
-        public ActionResult Index()
+        public ActionResult Flights()
         {
             return View();
         }
+
+        public ActionResult Hotels()
+        {
+            return View();
+        }
+
+        public ActionResult MakingATrip()
+        {
+            return View();
+        }
+        
     }
 }
