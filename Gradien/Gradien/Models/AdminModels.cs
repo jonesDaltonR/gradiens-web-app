@@ -10,6 +10,7 @@ namespace Gradien.Models
     // Admin object that is holds information for the ADMIN table
     public class AdminModels
     {
+        [Key]
         [Required]
         [Display(Name = "Admin ID")]
         public long ADMIN_ID { get; set; }
