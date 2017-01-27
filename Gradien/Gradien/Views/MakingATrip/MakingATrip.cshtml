@@ -17,17 +17,27 @@
     <h3>Making A Trip Map</h3>
     <div id="map"></div>
     <script>
-      function initMap() {
-          var GrandRapids = { lat: 4.56474, lng: 1.582031 };
+        function initMap() {
+            var Center = { lat: 0.0, lng: 0.0 };
+            var Chicago = { lat: 41.8781, lng: -87.6298 };
+            var GrandRapids = { lat: 42.9634, lng: -85.6681 };
+            var Aussie = { lat: -33.8688, lng: 151.2093 };
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 2,
-          center: GrandRapids
+          center: Center
         });
-        /* var marker = new google.maps.Marker({
+         var marker = new google.maps.Marker({
           position: GrandRapids,
           map: map
         });
-        */
+         var marker = new google.maps.Marker({
+             position: Chicago,
+             map: map
+         });
+         var marker = new google.maps.Marker({
+             position: Aussie,
+             map: map
+         });
       }
     </script>
     <script async defer
