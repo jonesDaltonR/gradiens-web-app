@@ -1,0 +1,7 @@
+﻿CREATE TABLE [dbo].[Table]
+(
+	[LocId] INT NOT NULL PRIMARY KEY IDENTITY, 
+    [LocName] VARBINARY(50) NOT NULL, 
+    [LocLat] FLOAT NOT NULL, 
+    [LocLong] FLOAT NOT NULL 
+)
