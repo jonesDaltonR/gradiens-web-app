@@ -14,6 +14,8 @@ namespace Gradien.Models
         [Display(Name = "User ID")]
         public long USER_ID { get; set; }
 
+        [Required]
+        [Display(Name = "Username")]
         public string USER_USERNAME { get; set; }
         
         [Required]
