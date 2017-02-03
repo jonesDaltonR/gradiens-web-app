@@ -26,20 +26,81 @@
           zoom: 2,
           center: Center
         });
-         var marker = new google.maps.Marker({
-          position: GrandRapids,
-          map: map
+
+        var Grand = '<div><h1>Grand Rapids</h1></div>';
+        var CHI = '<div><h1>Chicago</h1></div>';
+        var AUS = '<div><h1>Sydney</h1></div>';
+
+        var info = new google.maps.InfoWindow({
+            content: Grand
         });
-         var marker = new google.maps.Marker({
+        var information = new google.maps.InfoWindow({
+            content: CHI
+        });
+        var infomationWindow = new google.maps.InfoWindow({
+            content: AUS
+        });
+         var GR = new google.maps.Marker({
+          position: GrandRapids,
+          map: map,
+          title: 'Grand Rapids'
+        });
+         var CH = new google.maps.Marker({
              position: Chicago,
-             map: map
+             map: map,
+             title: 'Chicago'
          });
-         var marker = new google.maps.Marker({
+         var AU = new google.maps.Marker({
              position: Aussie,
-             map: map
+             map: map,
+             title: 'Australia'
          });
-      }
+         
+         GR.addListener('click', function () {
+             info.open(map, GR);
+         });
+         CH.addListener('click', function () {
+             information.open(map, CH);
+         });
+         AU.addListener('click', function () {
+             infomationWindow.open(map, AU);
+         });
+
+          }
     </script>
+
+    <form action="">
+        <div class="hotel">
+            <fieldset>
+                Location<br>
+                <input class="btn1" type="text"><br />
+                Check In Date<br>
+                <input class="btn1" type="text"><br />
+                Check Out Date<br />
+                <input class="btn1" type="text"><br />
+            </fieldset>
+
+        </div>
+        <div class="flight">
+            <fieldset>
+                Email<br>
+                <input class="btn1" type="text"><br>
+                Password<br>
+                <input class="btn1" type="text">
+            </fieldset>
+
+        </div>
+        <div class="fh">
+            <fieldset>
+                Address<br>
+                <input class="btn1" type="text"><br>
+                City<br>
+                <input class="btn1" type="text"><br>
+            </fieldset>
+            <input type="submit" value="Submit" />
+        </div>
+    </form>
+
     <script async defer
            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAx1UItaXdujKDjEEP4moYvqm3XfpH3x0c&callback=initMap">
     </script>
