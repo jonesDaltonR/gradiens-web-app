@@ -7,6 +7,7 @@ using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
 using System.Web.Http;
+using System.Security.Principal;
 
 namespace Gradien
 {
@@ -19,5 +20,21 @@ namespace Gradien
             GlobalConfiguration.Configure(WebApiConfig.Register);
             RouteConfig.RegisterRoutes(RouteTable.Routes);            
         }
+        protected void Application_AuthenticateRequest(Object sender, EventArgs e)
+        {
+            HttpCookie authCookie =
+                          Context.Request.Cookies[FormsAuthentication.FormsCookieName];
+            if (authCookie != null)
+            {
+                FormsAuthenticationTicket authTicket =
+                                            FormsAuthentication.Decrypt(authCookie.Value);
+                string[] roles = authTicket.UserData.Split(new Char[] { ',' });
+                GenericPrincipal userPrincipal =
+                                 new GenericPrincipal(new GenericIdentity(authTicket.Name), roles);
+                Context.User = userPrincipal;
+            }
+        }
+
     }
+
 }
