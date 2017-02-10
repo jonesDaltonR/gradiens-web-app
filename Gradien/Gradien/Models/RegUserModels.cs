@@ -9,6 +9,7 @@ namespace Gradien.Models
     // Regular User object that is holds information for the REG_USER table
     public class RegUserModels
     {
+        [Key]
         [Required]
         [Display(Name = "User ID")]
         public long REG_USER_ID { get; set; }

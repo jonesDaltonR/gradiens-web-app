@@ -1,0 +1,22 @@
+﻿{
+  "GoogLoc"[
+    {
+      "id": 1,
+      "lat": 42.9634,
+      "lng": -85.6681,
+      "name": "Grand Rapids, Michigan"
+    },
+    {
+      "id": 2,
+      "lat": 41.8781,
+      "lng": -87.6298,
+      "name": "Chicago, Illinois"
+    },
+     {
+      "id": 3,
+      "lat": -33.8688,
+      "lng":  151.2093,
+      "name": "Sydney, Australia"
+    }
+  ]
+}

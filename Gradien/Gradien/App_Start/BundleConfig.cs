@@ -21,8 +21,7 @@ namespace Gradien
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js",
-                      "~/Scripts/AdminLTE-2.3.11/js/app.min.js",
+                      "~/Scripts/bootstrap.js",                     
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(

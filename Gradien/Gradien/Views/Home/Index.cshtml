@@ -1,16 +1,100 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
+<style type="text/css">
+    div.hotel {
+        
+    }
+    div.flight{
+        display:none;
+    }
+    div.fh {
+        display:none;
+    }
+</style>
+<script type="text/javascript">
+        function showhide(id)
+        {
+            if(id == "btn1")
+                {
+                var elementsToHide = document.querySelectorAll("div.flight,div.fh");
+                var elementsToShow = document.querySelectorAll(".hotel");
 
+                for (var i = 0; i != elementsToHide.length; i++) {
+                    elementsToHide[i].style.display = "none";
+                }
+                for (var i = 0; i != elementsToShow.length; i++) {
+                    elementsToShow[i].style.display = "inline";
+                }
+                }
+            else if(id == "btn2")
+                {
+                var elementsToHide = document.querySelectorAll("div.fh,div.hotel");
+                var elementsToShow = document.querySelectorAll(".flight");
+
+                for (var i = 0; i != elementsToHide.length; i++) {
+                    elementsToHide[i].style.display = "none";
+                }
+                for (var i = 0; i != elementsToShow.length; i++) {
+                    elementsToShow[i].style.display = "inline";
+                }
+            }
+
+            else if(id == "btn3")
+                {
+                var elementsToHide = document.querySelectorAll("div.flight,div.hotel");
+                var elementsToShow = document.querySelectorAll(".fh");
+
+                for (var i = 0; i != elementsToHide.length; i++) {
+                    elementsToHide[i].style.display = "none";
+                }
+                for (var i = 0; i != elementsToShow.length; i++) {
+                    elementsToShow[i].style.display = "inline";
+                }
+                }
+        }
+</script>
 <div class="homecontent">
+    <button onclick="showhide(this.id)" id="btn1">Show Div1</button>
+    <button onclick="showhide(this.id)" id="btn2">Show Div2</button>
+    <button onclick="showhide(this.id)" id="btn3">Show Div3</button>
     <div class="search">
+        
+        <div class="hotel">
+            <form>
+                Location<br>
+                <input class="btn1" type="text"><br />
+                Check In Date<br>
+                <input class="btn1" type="text"><br />
+                Check Out Date<br />
+                <input class="btn1" type="text"><br />
+            </form>
 
+        </div>
+        <div class="flight">
+            <form>
+                Email<br>
+                <input class="btn1" type="text"><br>
+                Password<br>
+                <input class="btn1" type="text">
+            </form>
+
+        </div>
+        <div class="fh">
+            <form>
+                Address<br>
+                <input class="btn1" type="text"><br>
+                City<br>
+                <input class="btn1" type="text">
+            </form>
+
+        </div>
     </div>
     <div class="recommended">
         <ul style="list-style-type:none;margin:0px;padding:0px">
             <h3 style="text-indent:10px">Recommended Locations</h3>
             <br />
-            <li style="display:inline;padding:35px"><img src="~/Images/New York.jpg" style="height:200px;width:200px"/></li>
+            <li style="display:inline;padding:35px"><a href="~/MakingATrip/MakingATrip"><img src="~/Images/New York.jpg" style="height:200px;width:200px" /></a></li>
             <li style="display:inline;padding:35px"><img src="~/Images/San Fran.jpg" style="height:200px;width:200px"/></li>
             <li style="display:inline;padding:35px"><img src="~/Images/florida.jpeg" style="height:200px;width:200px"/></li>
         </ul>

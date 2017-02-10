@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Gradien.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,6 +11,20 @@ namespace Gradien.Controllers
     {
         public ActionResult Index()
         {
+            return View();
+        }
+
+        public ActionResult Login()
+        {
+            ViewBag.Message = "Login page";
+
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Login(UserModels user)
+        {
+
             return View();
         }
 

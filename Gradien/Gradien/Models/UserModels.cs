@@ -9,10 +9,13 @@ namespace Gradien.Models
     // User object that is holds information for the USER table
     public class UserModels
     {
+        [Key]
         [Required]
         [Display(Name = "User ID")]
         public long USER_ID { get; set; }
 
+        [Required]
+        [Display(Name = "Username")]
         public string USER_USERNAME { get; set; }
         
         [Required]

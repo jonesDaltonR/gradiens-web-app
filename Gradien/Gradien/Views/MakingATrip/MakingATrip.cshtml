@@ -1,7 +1,146 @@
-﻿
+﻿@model Gradien.Models.LocationModels
+
 @{
     ViewBag.Title = "MakingATrip";
 }
+<head>
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+</head>
 
 <h2>MakingATrip</h2>
 
+<body>
+    <h3>Making A Trip Map</h3>
+    <div id="map"></div>
+    <script>
+        function initMap() {
+            var Center = { lat: 0.0, lng: 0.0 };
+            var Chicago = { lat: 41.8781, lng: -87.6298 };
+            var GrandRapids = { lat: 42.9634, lng: -85.6681 };
+            var Aussie = { lat: -33.8688, lng: 151.2093 };
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 2,
+          center: Center
+        });
+
+        var Grand = '<div><h1>Grand Rapids</h1></div>';
+        var CHI = '<div><h1>Chicago</h1></div>';
+        var AUS = '<div><h1>Sydney</h1></div>';
+
+        var info = new google.maps.InfoWindow({
+            content: Grand
+        });
+        var information = new google.maps.InfoWindow({
+            content: CHI
+        });
+        var infomationWindow = new google.maps.InfoWindow({
+            content: AUS
+        });
+         var GR = new google.maps.Marker({
+          position: GrandRapids,
+          map: map,
+          title: 'Grand Rapids'
+        });
+         var CH = new google.maps.Marker({
+             position: Chicago,
+             map: map,
+             title: 'Chicago'
+         });
+         var AU = new google.maps.Marker({
+             position: Aussie,
+             map: map,
+             title: 'Australia'
+         });
+
+         GR.addListener('click', function () {
+             info.open(map, GR);
+         });
+         CH.addListener('click', function () {
+             information.open(map, CH);
+         });
+         AU.addListener('click', function () {
+             infomationWindow.open(map, AU);
+         });
+
+          }
+    </script>
+ 
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h4>LocationModels</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.LOCATION_CITY_NAME, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.LOCATION_CITY_NAME, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.LOCATION_CITY_NAME, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.LOCATION_COUNTRY_NAME, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.LOCATION_COUNTRY_NAME, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.LOCATION_COUNTRY_NAME, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.LOCATION_ADDRESS, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.LOCATION_ADDRESS, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.LOCATION_ADDRESS, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.LOCATION_LONGITUDE, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.LOCATION_LONGITUDE, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.LOCATION_LONGITUDE, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.LOCATION_LATITUDE, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.LOCATION_LATITUDE, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.LOCATION_LATITUDE, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.DELETE_STAT, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    <div class="checkbox">
+                        @Html.EditorFor(model => model.DELETE_STAT)
+                        @Html.ValidationMessageFor(model => model.DELETE_STAT, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    }
+
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAx1UItaXdujKDjEEP4moYvqm3XfpH3x0c&callback=initMap">
+    </script>
+</body>
+ 

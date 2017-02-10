@@ -9,6 +9,7 @@ namespace Gradien.Models
     // Location object that is holds information for the LOCATION table
     public class LocationModels
     {
+        [Key]
         [Required]
         [Display(Name = "Location ID")]
         public long LOCATION_ID { get; set; }
