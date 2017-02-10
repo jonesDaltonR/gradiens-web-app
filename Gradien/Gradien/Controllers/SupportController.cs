@@ -25,7 +25,6 @@ namespace Gradien.Controllers
         }
 
         public ActionResult Support()
-
         {
             return View();
         }

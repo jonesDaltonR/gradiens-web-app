@@ -6,7 +6,7 @@
 <h2>@ViewBag.Title</h2>
 
 <p>Use this to form to send us feed back or concerns you have with the website.</p>
-
+<!--Form for the User to use to send us an email-->
 <form class="form-horizontal">
     <fieldset id="generalInfo">
         <legend><span>General Information</span></legend>
@@ -14,7 +14,7 @@
         <p>Give us useful information like your name and email address so we can have more infomation when contacting you</p>
 
         <div class="form-group">
-
+            <!--Name of user-->
                 <label class="control-label col-sm-1" for="idname">
                     Name:
                 </label>
@@ -23,7 +23,7 @@
             </div>
             <br />
         </div>
-
+        <!--Email of the user-->
         <div class="form-group">
             
                 <label class="control-label col-sm-1" for="email">
@@ -38,7 +38,7 @@
         <legend><span>Feedback</span></legend>
 
         <p>Describe the problem you are facing or give us feedback about what you like about our website and what you don't. <br /> The more specific you are about what aspects and page you do/don't like the better we can improve our site!</p>
-
+        <!--Anything the user wants to let us know about in terms of problems or feed back, will be used as the body portion of the email-->
         <label>
             <textarea id="idFeedback" class="form-control" name="feedback" placeholder="Type your feedback here..." rows="8" cols="80"></textarea>
         </label>

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ﻿@model Gradien.Models.BookingModels
+=======
+﻿@model Gradien.Models.LocationModels
+>>>>>>> ef0e02cf993c353c9c9f27061154b6a3e8de0da6
 
 @{
     ViewBag.Title = "MakingATrip";
@@ -55,6 +59,7 @@
              position: Aussie,
              map: map,
              title: 'Australia'
+<<<<<<< HEAD
          });
 
          GR.addListener('click', function () {
@@ -71,11 +76,29 @@
     </script>
  
 
+=======
+         });
+
+         GR.addListener('click', function () {
+             info.open(map, GR);
+         });
+         CH.addListener('click', function () {
+             information.open(map, CH);
+         });
+         AU.addListener('click', function () {
+             infomationWindow.open(map, AU);
+         });
+
+          }
+    </script>
+ 
+>>>>>>> ef0e02cf993c353c9c9f27061154b6a3e8de0da6
     @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
 
         <div class="form-horizontal">
+<<<<<<< HEAD
             <h4>BookingModels</h4>
             <hr />
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -102,42 +125,81 @@
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.HOTEL_COST, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.HOTEL_COST, "", new { @class = "text-danger" })
+=======
+            <h4>LocationModels</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.LOCATION_CITY_NAME, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.LOCATION_CITY_NAME, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.LOCATION_CITY_NAME, "", new { @class = "text-danger" })
+>>>>>>> ef0e02cf993c353c9c9f27061154b6a3e8de0da6
                 </div>
             </div>
 
             <div class="form-group">
+<<<<<<< HEAD
                 @Html.LabelFor(model => model.HOTEL_CHECK_IN, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.HOTEL_CHECK_IN, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.HOTEL_CHECK_IN, "", new { @class = "text-danger" })
+=======
+                @Html.LabelFor(model => model.LOCATION_COUNTRY_NAME, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.LOCATION_COUNTRY_NAME, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.LOCATION_COUNTRY_NAME, "", new { @class = "text-danger" })
+>>>>>>> ef0e02cf993c353c9c9f27061154b6a3e8de0da6
                 </div>
             </div>
 
             <div class="form-group">
+<<<<<<< HEAD
                 @Html.LabelFor(model => model.HOTEL_CHECK_OUT, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.HOTEL_CHECK_OUT, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.HOTEL_CHECK_OUT, "", new { @class = "text-danger" })
+=======
+                @Html.LabelFor(model => model.LOCATION_ADDRESS, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.LOCATION_ADDRESS, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.LOCATION_ADDRESS, "", new { @class = "text-danger" })
+>>>>>>> ef0e02cf993c353c9c9f27061154b6a3e8de0da6
                 </div>
             </div>
 
             <div class="form-group">
+<<<<<<< HEAD
                 @Html.LabelFor(model => model.DEPARTING, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.DEPARTING, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.DEPARTING, "", new { @class = "text-danger" })
+=======
+                @Html.LabelFor(model => model.LOCATION_LONGITUDE, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.LOCATION_LONGITUDE, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.LOCATION_LONGITUDE, "", new { @class = "text-danger" })
+>>>>>>> ef0e02cf993c353c9c9f27061154b6a3e8de0da6
                 </div>
             </div>
 
             <div class="form-group">
+<<<<<<< HEAD
                 @Html.LabelFor(model => model.RETURNING, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.RETURNING, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.RETURNING, "", new { @class = "text-danger" })
+=======
+                @Html.LabelFor(model => model.LOCATION_LATITUDE, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.LOCATION_LATITUDE, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.LOCATION_LATITUDE, "", new { @class = "text-danger" })
+>>>>>>> ef0e02cf993c353c9c9f27061154b6a3e8de0da6
                 </div>
             </div>
 
             <div class="form-group">
+<<<<<<< HEAD
                 @Html.LabelFor(model => model.NO_ADULTS, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.NO_ADULTS, new { htmlAttributes = new { @class = "form-control" } })
@@ -150,6 +212,14 @@
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.NO_CHILDREN, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.NO_CHILDREN, "", new { @class = "text-danger" })
+=======
+                @Html.LabelFor(model => model.DELETE_STAT, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    <div class="checkbox">
+                        @Html.EditorFor(model => model.DELETE_STAT)
+                        @Html.ValidationMessageFor(model => model.DELETE_STAT, "", new { @class = "text-danger" })
+                    </div>
+>>>>>>> ef0e02cf993c353c9c9f27061154b6a3e8de0da6
                 </div>
             </div>
 
@@ -161,7 +231,10 @@
         </div>
     }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> ef0e02cf993c353c9c9f27061154b6a3e8de0da6
     <div>
         @Html.ActionLink("Back to List", "Index")
     </div>
