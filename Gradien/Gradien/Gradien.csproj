@@ -160,33 +160,69 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\AdminLTE-2.3.11\css\AdminLTE.css" />
+    <Content Include="Content\AdminLTE-2.3.11\css\AdminLTE.min.css" />
+    <Content Include="Content\AdminLTE-2.3.11\css\alt\AdminLTE-bootstrap-social.css" />
+    <Content Include="Content\AdminLTE-2.3.11\css\alt\AdminLTE-bootstrap-social.min.css" />
+    <Content Include="Content\AdminLTE-2.3.11\css\alt\AdminLTE-fullcalendar.css" />
+    <Content Include="Content\AdminLTE-2.3.11\css\alt\AdminLTE-fullcalendar.min.css" />
+    <Content Include="Content\AdminLTE-2.3.11\css\alt\AdminLTE-select2.css" />
+    <Content Include="Content\AdminLTE-2.3.11\css\alt\AdminLTE-select2.min.css" />
+    <Content Include="Content\AdminLTE-2.3.11\css\alt\AdminLTE-without-plugins.css" />
+    <Content Include="Content\AdminLTE-2.3.11\css\alt\AdminLTE-without-plugins.min.css" />
+    <Content Include="Content\AdminLTE-2.3.11\css\skins\skin-black-light.css" />
+    <Content Include="Content\AdminLTE-2.3.11\css\skins\skin-black-light.min.css" />
+    <Content Include="Content\AdminLTE-2.3.11\css\skins\skin-black.css" />
+    <Content Include="Content\AdminLTE-2.3.11\css\skins\skin-black.min.css" />
+    <Content Include="Content\AdminLTE-2.3.11\css\skins\skin-blue-light.css" />
+    <Content Include="Content\AdminLTE-2.3.11\css\skins\skin-blue-light.min.css" />
+    <Content Include="Content\AdminLTE-2.3.11\css\skins\skin-blue.css" />
+    <Content Include="Content\AdminLTE-2.3.11\css\skins\skin-blue.min.css" />
+    <Content Include="Content\AdminLTE-2.3.11\css\skins\skin-green-light.css" />
+    <Content Include="Content\AdminLTE-2.3.11\css\skins\skin-green-light.min.css" />
+    <Content Include="Content\AdminLTE-2.3.11\css\skins\skin-green.css" />
+    <Content Include="Content\AdminLTE-2.3.11\css\skins\skin-green.min.css" />
+    <Content Include="Content\AdminLTE-2.3.11\css\skins\skin-purple-light.css" />
+    <Content Include="Content\AdminLTE-2.3.11\css\skins\skin-purple-light.min.css" />
+    <Content Include="Content\AdminLTE-2.3.11\css\skins\skin-purple.css" />
+    <Content Include="Content\AdminLTE-2.3.11\css\skins\skin-purple.min.css" />
+    <Content Include="Content\AdminLTE-2.3.11\css\skins\skin-red-light.css" />
+    <Content Include="Content\AdminLTE-2.3.11\css\skins\skin-red-light.min.css" />
+    <Content Include="Content\AdminLTE-2.3.11\css\skins\skin-red.css" />
+    <Content Include="Content\AdminLTE-2.3.11\css\skins\skin-red.min.css" />
+    <Content Include="Content\AdminLTE-2.3.11\css\skins\skin-yellow-light.css" />
+    <Content Include="Content\AdminLTE-2.3.11\css\skins\skin-yellow-light.min.css" />
+    <Content Include="Content\AdminLTE-2.3.11\css\skins\skin-yellow.css" />
+    <Content Include="Content\AdminLTE-2.3.11\css\skins\skin-yellow.min.css" />
+    <Content Include="Content\AdminLTE-2.3.11\css\skins\_all-skins.css" />
+    <Content Include="Content\AdminLTE-2.3.11\css\skins\_all-skins.min.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-<<<<<<< HEAD
-=======
-
->>>>>>> f41c12bde64d16a478dc2f390f4f1041e39c16a7
+    <Content Include="css\font-awesome.css" />
+    <Content Include="css\font-awesome.min.css" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
-<<<<<<< HEAD
-=======
-
->>>>>>> f41c12bde64d16a478dc2f390f4f1041e39c16a7
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
     <Content Include="Images\florida.jpeg" />
@@ -200,6 +236,10 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap.min.css.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <None Include="Scripts\jquery-2.2.4.intellisense.js" />
+    <Content Include="Scripts\jquery-2.2.4.js" />
+    <Content Include="Scripts\jquery-2.2.4.min.js" />
+    <Content Include="Scripts\jquery-2.2.4.min.map" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />
@@ -217,7 +257,9 @@
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
     <None Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -271,18 +313,13 @@
     <Content Include="Views\MakingATrip\Hotels.cshtml" />
     <Content Include="Views\Support\SubmitTicket.cshtml" />
     <Content Include="Views\Support\Feedback.cshtml" />
-<<<<<<< HEAD
     <Content Include="Scripts\jquery-1.9.1.min.map" />
     <Content Include="Scripts\jquery-3.1.1.min.map" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
-=======
-
     <Content Include="Scripts\jquery-1.9.1.min.map" />
-
     <Content Include="Scripts\jquery-3.1.1.min.map" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
-
->>>>>>> f41c12bde64d16a478dc2f390f4f1041e39c16a7
+    <Content Include="Views\Shared\_AdminLayout.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -292,6 +329,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Scripts\AdminLTE-2.3.11\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
