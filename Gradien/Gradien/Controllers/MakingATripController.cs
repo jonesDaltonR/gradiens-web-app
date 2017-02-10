@@ -23,7 +23,7 @@ namespace Gradien.Controllers
                 db.Booking.Add(booking);
                 db.SaveChanges();
 
-                return RedirectToAction("Index");
+                return RedirectToAction("MakingATrip");
             }
             else
             {
@@ -35,6 +35,23 @@ namespace Gradien.Controllers
         {
             return View();
         }
-        
+
+        [HttpPost]
+        public ActionResult MakingATrip(BookingModels booking)
+        {
+            GDbContext db = new GDbContext();
+            if (ModelState.IsValid)
+            {
+                db.Booking.Add(booking);
+                db.SaveChanges();
+
+                return RedirectToAction("MakingATrip");
+            }
+            else
+            {
+                return View(booking);
+            }
+        }
+
     }
 }
