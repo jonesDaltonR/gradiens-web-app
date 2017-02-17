@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Gradien.Models
 {
@@ -15,18 +16,23 @@ namespace Gradien.Models
         public long USER_ID { get; set; }
 
         [Required]
-        [Display(Name = "Username")]
-        public string USER_USERNAME { get; set; }
-        
+        [StringLength(100)]
+        [Index("USER_EMAIL", 1, IsUnique = true)]
+        [Display(Name = "Email Address")]
+        [EmailAddress] // Must be in a valid email format i.e. me@email.com
+        public string USER_EMAIL { get; set; }
+
         [Required]
         [DataType(DataType.Password)] // Hides user input as it's typed
         [Display(Name = "Password")]
         public string USER_PASSWORD { get; set; }
 
+        public string USER_PASSWORD_SALT { get; set; }
+
         [Required]
         [Display(Name = "First Name")]
         public string USER_FIRST_NAME { get; set; }
-        
+
         [Display(Name = "Middle Name")]
         public string USER_MIDDLE_NAME { get; set; }
 
@@ -39,14 +45,13 @@ namespace Gradien.Models
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")] // Only allow Dates
         public DateTime USER_DATE_OF_BIRTH { get; set; }
 
-        [Required]
-        [Display(Name = "Gender")]
-        public string USER_GENDER { get; set; }
+        [Display(Name = "Payment Method")]
+        public string USER_PAYMENT_METHOD { get; set; }
 
-        [Required]
-        [Display(Name = "Email Address")]
-        [EmailAddress] // Must be in a valid email format i.e. me@email.com
-        public string USER_EMAIL { get; set; }
+        [Display(Name = "Home Airport")]
+        public string USER_HOME_AIRPORT { get; set; }
+
+        public bool ADMIN_CONTROLS { get; set; }
 
         public bool DELETE_STAT { get; set; }
     }

@@ -8,6 +8,7 @@ using System.Web.Security;
 using System.Web.SessionState;
 using System.Web.Http;
 using System.Web.Optimization;
+using System.Security.Principal;
 
 namespace Gradien
 {
@@ -21,5 +22,21 @@ namespace Gradien
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);        
         }
+        protected void Application_AuthenticateRequest(Object sender, EventArgs e)
+        {
+            HttpCookie authCookie =
+                          Context.Request.Cookies[FormsAuthentication.FormsCookieName];
+            if (authCookie != null)
+            {
+                FormsAuthenticationTicket authTicket =
+                                            FormsAuthentication.Decrypt(authCookie.Value);
+                string[] roles = authTicket.UserData.Split(new Char[] { ',' });
+                GenericPrincipal userPrincipal =
+                                 new GenericPrincipal(new GenericIdentity(authTicket.Name), roles);
+                Context.User = userPrincipal;
+            }
+        }
+
     }
+
 }

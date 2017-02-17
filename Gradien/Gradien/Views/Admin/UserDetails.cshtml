@@ -1,0 +1,90 @@
+﻿@model Gradien.Models.UserModels
+
+@{
+    ViewBag.Title = "UserDetails";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>UserDetails</h2>
+
+<div>
+    <h4>UserModels</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.USER_EMAIL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USER_EMAIL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.USER_FIRST_NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USER_FIRST_NAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.USER_MIDDLE_NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USER_MIDDLE_NAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.USER_LAST_NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USER_LAST_NAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.USER_DATE_OF_BIRTH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USER_DATE_OF_BIRTH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.USER_PAYMENT_METHOD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USER_PAYMENT_METHOD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.USER_HOME_AIRPORT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USER_HOME_AIRPORT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ADMIN_CONTROLS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ADMIN_CONTROLS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DELETE_STAT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DELETE_STAT)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "UserList")
+</p>
