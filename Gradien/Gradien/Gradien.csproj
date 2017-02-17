@@ -328,6 +328,8 @@
     <Content Include="Views\MakingATrip\Index.cshtml" />
     <Content Include="Views\MakingATrip\PlanningATrip.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\UserList.cshtml" />
+    <Content Include="Views\Admin\UserDetails.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
