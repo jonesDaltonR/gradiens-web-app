@@ -7,8 +7,8 @@ using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
 using System.Web.Http;
-using System.Web.Optimization;
 using System.Security.Principal;
+using System.Web.Optimization;
 
 namespace Gradien
 {
@@ -20,7 +20,7 @@ namespace Gradien
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-            BundleConfig.RegisterBundles(BundleTable.Bundles);        
+            BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
         protected void Application_AuthenticateRequest(Object sender, EventArgs e)
         {

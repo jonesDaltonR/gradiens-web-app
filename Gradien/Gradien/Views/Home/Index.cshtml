@@ -28,6 +28,12 @@
         width: 100vw;
         margin: 0 auto;
     }
+
+    input.btnSubmit {
+        background-color: rgba(35, 35, 35, 1);
+        color: white;
+        border-color: black;
+    }
 </style>
 <script type="text/javascript">
     /*function showhide(id) {
@@ -60,21 +66,26 @@
     <div class="pictures">
     </div>
     <div class="search">
-       <!--<button onclick="showhide(this.id)" id="btn1">Show Div1</button>
-        <button onclick="showhide(this.id)" id="btn2">Show Div2</button>-->
-            <form action="">
-                Hotel Name<br>
-                <input class="hotelName" type="text"><br />
-                Location<br>
-                <select class="locationSelect">
-                    <option value="chicago">Chicago,Illinois</option>
-                    <option value="grand rapids">Grand Rapids, Michigan</option>
-                    <option value="sidney">Sidney, Australia</option>
-                </select><br />
-                <buttom onclick="search()" id="btnSearch">Search</buttom>
-            </form>
+        <!--Search Hotel Database-->
+        <fieldset>
+            <legend>Search Hotel</legend>
+            @using (Html.BeginForm("Index","Hotel"))
+            {
+                List<SelectListItem> list = new List<SelectListItem>();
+                list.Add(new SelectListItem() { Text = "All Locations", Value = "" });
+                list.Add(new SelectListItem() { Text = "Chicago, Illinois", Value = "chicago" });
+                list.Add(new SelectListItem() { Text = "Grand Rapids, Michigan", Value = "grand rapids" });
+                list.Add(new SelectListItem() { Text = "Sydney, Australia", Value = "sydney" });
+
+                @Html.Label("Hotel Name")<br />
+                @Html.TextBox("txtName")<br />
+                <br />
+                @Html.Label("Hotel City")<br />
+                @Html.DropDownList("selectLocation", list)<br/>
+                <input type="submit" value="Search" id="btnSearch"/>
+            }
+        </fieldset>
     </div>
-    @Html.ActionLink("Test", "Index", "Hotel")
     <div class="recommended">
         <ul>
             <h3 style="text-indent:10px">Recommended Locations</h3>
