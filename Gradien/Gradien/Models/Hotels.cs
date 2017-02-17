@@ -29,6 +29,7 @@ namespace Gradien.Models
         [Display(Name = "Hotel City")]
         public string HOTEL_CITY { get; set; }
 
+        [Display(Name = "Hotel Image")]
         public string HOTEL_IMAGE { get; set; }
 
     }
