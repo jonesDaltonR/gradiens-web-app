@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Gradien.Models.Hotels>
+
+@{
+    ViewBag.Title = "HotelList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>HotelList</h2>
+
+<style type="text/css">
+    img {
+        max-height: 200px;
+        max-width: 225px;
+    }
+</style>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.HOTEL_NAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HOTEL_STATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HOTEL_CITY)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HOTEL_IMAGE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DELETE_STAT)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.HOTEL_NAME)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HOTEL_STATE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HOTEL_CITY)
+            </td>
+            <td>
+                <img src="@Url.Content("~/Images/"+item.HOTEL_IMAGE)" alt="Image" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DELETE_STAT)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "HotelDetails", new { id = item.HOTEL_ID }) |
+                @Html.ActionLink("Delete", "HotelDelete", new { id = item.HOTEL_ID })
+            </td>
+        </tr>
+    }
+
+</table>

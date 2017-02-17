@@ -51,8 +51,10 @@ namespace Gradien.Models
         [Display(Name = "Home Airport")]
         public string USER_HOME_AIRPORT { get; set; }
 
+        [Display(Name = "Admin Status")]
         public bool ADMIN_CONTROLS { get; set; }
 
+        [Display(Name = "Deletion Status")]
         public bool DELETE_STAT { get; set; }
     }
 }

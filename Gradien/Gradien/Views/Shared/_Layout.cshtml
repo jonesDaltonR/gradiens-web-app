@@ -64,9 +64,17 @@
     <div>
         <ul class="headBar">
             <li>@Html.ActionLink("Home", "Index", "Home")</li>
-            <li>Recommended</li>
             <li>@Html.ActionLink("Plan A Trip", "MakingATrip", "MakingATrip")</li>
             <li>@Html.ActionLink("Support/Contact Us", "Support", "Support")</li>
+
+            @if (Request.IsAuthenticated) // If user is logged in
+            {
+                <li>@Html.ActionLink("Logout", "Logout", "Account")</li>
+            }
+            @if (!Request.IsAuthenticated) // If user is not logged in
+            {
+                <li>@Html.ActionLink("Login", "Login", "Account")</li>
+            }
         </ul>
     </div>
     <br />

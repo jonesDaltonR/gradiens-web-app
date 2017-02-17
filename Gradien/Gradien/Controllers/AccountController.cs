@@ -14,16 +14,17 @@ namespace Gradien.Controllers
 {
     public class AccountController : Controller
     {
-        [Authorize]
+        [Authorize] // Requires user to be logged in to access
         [HttpGet]
+        // Sign out user
         public ActionResult Logout()
         {
-            FormsAuthentication.SignOut();
-            return RedirectToAction("Index", "Home");
+            FormsAuthentication.SignOut(); // Log out
+            return RedirectToAction("Index", "Home"); // Return to home page
         }
 
 
-        // GET: Account
+        // Login page
         [HttpGet]
         public ActionResult Login()
         {
@@ -31,6 +32,7 @@ namespace Gradien.Controllers
         }
 
         [HttpPost]
+        // Retrieve data from user input
         public ActionResult Login(UserModels login)
         {
 
@@ -49,57 +51,53 @@ namespace Gradien.Controllers
             GDbContext db = new GDbContext();
             UserModels user = db.User.SingleOrDefault(u => u.USER_EMAIL == login.USER_EMAIL) as UserModels;
 
-            if(user == null)
+            if(user == null) // User doesn't exist
             {
-                ModelState.AddModelError(string.Empty, "No user found");
+                ModelState.AddModelError(string.Empty, "User/password combination does not exist.");
+                login.USER_PASSWORD = string.Empty; // Clear password
                 return View(login);
             }
 
-            if (user != null)
+            if (user != null) // If user exists
             {
                 login.USER_PASSWORD = Hash(Encoding.ASCII.GetBytes(login.USER_PASSWORD),
-                    Encoding.ASCII.GetBytes(user.USER_PASSWORD_SALT));
+                    Encoding.ASCII.GetBytes(user.USER_PASSWORD_SALT)); // Hash user input for password comparison
             }
 
-            if (login.USER_EMAIL.Equals(user.USER_EMAIL) && login.USER_PASSWORD.Equals(user.USER_PASSWORD))
+            // Compare user input to users in the database
+            if (login.USER_EMAIL.Equals(user.USER_EMAIL) &&     // Matching user email and password
+                login.USER_PASSWORD.Equals(user.USER_PASSWORD)) // was found in the database
             {
-
-                //FormsAuthentication.SetAuthCookie(login.USER_EMAIL, true);
-
-                if (user.ADMIN_CONTROLS == true)
+                if (user.ADMIN_CONTROLS == true) // Admin role
                 {
-                    /// Use following line for admin authorization
-                    /// [Authorize(Roles = "Admin" )]
-                    ///
-
-                    string roles = "Admin"; //Administrator,Contestant
+                    string roles = "Admin"; // Administrator
                     FormsAuthenticationTicket authTicket = new FormsAuthenticationTicket(
-                    2,              // version
-                    login.USER_EMAIL,   // user id
-                    DateTime.Now,   // issue dtm
-                    DateTime.Now.AddMinutes(120),  // expiry dtm
-                    false,          // do not remember cookie
-                    roles,          // role(s)
-                    "/");           // cookie path
-                                    //FormsAuthentication.SetAuthCookie(login.UserId, true);
-                    HttpCookie cookie = new HttpCookie(FormsAuthentication.FormsCookieName, FormsAuthentication.Encrypt(authTicket));
-                    Response.Cookies.Add(cookie);
-                    return Redirect("/Admin/");
+                    2, // Version
+                    login.USER_EMAIL, // User email
+                    DateTime.Now, // Time issued
+                    DateTime.Now.AddMinutes(120), // Expire time
+                    false, // Do not remember cookie
+                    roles, // Role(s)
+                    "/"); // Cookie path
+                    HttpCookie cookie = new HttpCookie(FormsAuthentication.FormsCookieName, 
+                        FormsAuthentication.Encrypt(authTicket)); // Set cookie
+                    Response.Cookies.Add(cookie); // Add cookie
+                    return Redirect("/Admin/"); // Redirect to admin page
                 }
-                else
+                else // User role
                 {
-                    string roles = "User"; //Administrator,Contestant
+                    string roles = "User"; // User
                     FormsAuthenticationTicket authTicket = new FormsAuthenticationTicket(
-                    2,              // version
-                    login.USER_EMAIL,   // user id
-                    DateTime.Now,   // issue dtm
-                    DateTime.Now.AddMinutes(120),  // expiry dtm
-                    false,          // do not remember cookie
-                    roles,          // role(s)
-                    "/");           // cookie path
-                                    //FormsAuthentication.SetAuthCookie(login.UserId, true);
-                    HttpCookie cookie = new HttpCookie(FormsAuthentication.FormsCookieName, FormsAuthentication.Encrypt(authTicket));
-                    Response.Cookies.Add(cookie);
+                    2, // Version
+                    login.USER_EMAIL, // User email
+                    DateTime.Now, // Time issued
+                    DateTime.Now.AddMinutes(120), // Expire time
+                    false, // Do not remember cookie
+                    roles, // Role(s)
+                    "/"); // Cookie path
+                    HttpCookie cookie = new HttpCookie(FormsAuthentication.FormsCookieName, 
+                        FormsAuthentication.Encrypt(authTicket)); // Set cookie
+                    Response.Cookies.Add(cookie); // Add cookie
                 }
 
                 return Redirect("/");
@@ -108,34 +106,37 @@ namespace Gradien.Controllers
             else
             {
                 ModelState.AddModelError(string.Empty, "User/password combination does not exist.");
+                login.USER_PASSWORD = string.Empty; // Clear password
                 return View(login);
             }
         }
 
+        // Registration page
         public ActionResult Registration()
         {
             return View();
         }
 
         [HttpPost]
+        // Retrieve data from user input
         public ActionResult Registration(UserModels user)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid) // Check for valid ModelState
             {
                 try
                 {
-                    GDbContext db = new GDbContext();
-                    user.USER_PASSWORD_SALT = GenerateSalt();
+                    GDbContext db = new GDbContext(); // Establish connection to the database
+                    user.USER_PASSWORD_SALT = GenerateSalt(); // Generate password salt
                     user.USER_PASSWORD = Hash(Encoding.ASCII.GetBytes(user.USER_PASSWORD),
-                        Encoding.ASCII.GetBytes(user.USER_PASSWORD_SALT));
+                        Encoding.ASCII.GetBytes(user.USER_PASSWORD_SALT)); // Hash password with password salt
 
-                    db.User.Add(user);
-                    db.SaveChanges();
-                    return RedirectToAction("Login");
+                    db.User.Add(user); // Add user to the datebase
+                    db.SaveChanges(); // Save changes to the database
+                    return RedirectToAction("Login"); // Redirect to login page
 
-                } catch(Exception)
+                } catch(Exception) // Catch unique constraint violation for email
                 {
-                    user.USER_PASSWORD = string.Empty;
+                    user.USER_PASSWORD = string.Empty; // Clear password
                     ModelState.AddModelError(string.Empty, "This email is already in use.");
                     return View(user);
                 }
@@ -146,21 +147,23 @@ namespace Gradien.Controllers
             }
         }
 
+        // Generate password salt
         public static string GenerateSalt()
         {
-            using (var rng = new RNGCryptoServiceProvider())
+            using (var rng = new RNGCryptoServiceProvider()) // Randomly generate salt
             {
-                byte[] salt = new byte[32];
-                rng.GetBytes(salt);
-                return Encoding.UTF8.GetString(salt);
+                byte[] salt = new byte[32]; // Holds salt
+                rng.GetBytes(salt); // Generates salt
+                return Encoding.UTF8.GetString(salt); // Encode salt
             }
         }
 
+        // Hash password with salt
         public static string Hash(byte[] data, byte[] salt)
         {
-            using (var hmac = new HMACSHA256(salt))
+            using (var hmac = new HMACSHA256(salt)) // Use salt to hash
             {
-                return Encoding.UTF8.GetString(hmac.ComputeHash(data));
+                return Encoding.UTF8.GetString(hmac.ComputeHash(data)); // Return hashed password
             }
         }
     }
