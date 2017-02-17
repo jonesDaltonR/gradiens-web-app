@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
     <!--TO DO: render the Scripts and Css bundles that are currently not working: modernizr, jquery, boostrap, Css is simply a misname Content/css -> Content/Site.css-->
-    @Styles.Render("/Content/bootstrap.css")
-    @Styles.Render("/Content/css")
-    @Scripts.Render("~/Scripts/modernizr-2.8.3")
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
 
     <style type="text/css">
         ul.headBar{

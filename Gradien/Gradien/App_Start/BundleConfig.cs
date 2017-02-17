@@ -21,11 +21,22 @@ namespace Gradien
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js",                     
+                      "~/Scripts/bootstrap.js",
+                      "~/Scripts/respond.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/Adminbootstrap").Include(
+                      "~/Scripts/bootstrap.js",
+                      "~/Scripts/AdminLTE-2.3.11/js/app.min.js",
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      "~/Content/Site.css"));
+
+            bundles.Add(new StyleBundle("~/AdminContent/css").Include(
+                      "~/Content/bootstrap.css",
+                      "~/Content/AdminLTE-2.3.11/css/AdminLTE.min.css",
+                      "~/Content/AdminLTE-2.3.11/css/skins/skin-blue.min.css",
                       "~/Content/Site.css"));
         }
     }
