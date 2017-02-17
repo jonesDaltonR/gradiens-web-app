@@ -29,5 +29,7 @@ namespace Gradiens.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<Gradien.Models.Hotels> HotelModels { get; set; }
     }
 }

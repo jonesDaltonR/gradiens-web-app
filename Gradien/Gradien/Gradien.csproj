@@ -227,6 +227,18 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Images\amway.jpg" />
+    <Content Include="Images\grace.jpg" />
+    <Content Include="Images\grandchicago.jpg" />
+    <Content Include="Images\macleay.jpg" />
+    <Content Include="Images\marriott.jpg" />
+    <Content Include="Images\metro.jpg" />
+    <Content Include="Images\omni.jpg" />
+    <Content Include="Images\ritz.jpg" />
+    <Content Include="Images\Tokyo.jpg" />
+    <Content Include="Images\CityRain.jpg" />
+    <Content Include="Images\Czech.jpg" />
+    <Content Include="Images\SnowyCity.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
@@ -270,6 +282,8 @@
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
     <None Include="Scripts\_references.js" />
+    <Content Include="Scripts\responsiveslides.js" />
+    <Content Include="Scripts\responsiveslides.min.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -280,6 +294,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HotelController.cs" />
     <Compile Include="Controllers\MakingATripController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\SupportController.cs" />
@@ -290,6 +305,7 @@
     <Compile Include="Models\AdminModels.cs" />
     <Compile Include="Models\BookingModels.cs" />
     <Compile Include="Models\GDbContext.cs" />
+    <Compile Include="Models\Hotels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\LocationModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />

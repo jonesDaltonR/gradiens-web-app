@@ -11,5 +11,6 @@ namespace Gradien.Models
         public DbSet<BookingModels> Booking { get; set; }
         public DbSet<LocationModels> Location { get; set; }
         public DbSet<UserModels> User { get; set; }
+        public DbSet<Hotels> Hotel { get; set; }
     }
 }
