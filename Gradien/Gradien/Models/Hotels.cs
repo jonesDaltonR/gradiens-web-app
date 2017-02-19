@@ -32,5 +32,8 @@ namespace Gradien.Models
         [Display(Name = "Hotel Image")]
         public string HOTEL_IMAGE { get; set; }
 
+        [Display(Name = "Deletion Status")]
+        public bool DELETE_STAT { get; set; }
+
     }
 }

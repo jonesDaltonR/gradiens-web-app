@@ -6,11 +6,15 @@ using System.Web;
 
 namespace Gradien.Models
 {
+    // Inherit from Microsoft's DbContext class
+    // The inherited methods allow this class to access and modify the database
+    // via Entity Framework
     public class GDbContext : DbContext
     {
-        public DbSet<BookingModels> Booking { get; set; }
-        public DbSet<LocationModels> Location { get; set; }
+        // Establish connection between the UserModels class and table in the database
         public DbSet<UserModels> User { get; set; }
+
+        // Establish connection between the Hotels class and table in the database
         public DbSet<Hotels> Hotel { get; set; }
     }
 }

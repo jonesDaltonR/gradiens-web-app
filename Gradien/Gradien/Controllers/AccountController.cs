@@ -105,7 +105,7 @@ namespace Gradien.Controllers
 
             else
             {
-                ModelState.AddModelError(string.Empty, "User/password combination does not exist.");
+                ViewBag.Message("User/password combination does not exist.");
                 login.USER_PASSWORD = string.Empty; // Clear password
                 return View(login);
             }

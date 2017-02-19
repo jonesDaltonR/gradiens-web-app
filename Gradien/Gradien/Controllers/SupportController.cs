@@ -8,25 +8,17 @@ namespace Gradien.Controllers
 {
     public class SupportController : Controller
     {
-        // GET: Support
+        // Return Contact Us page
         public ActionResult Contact()
         {
             return View();
         }
 
-        public ActionResult Feedback()
-        {
-            return View();
-        }
-
-        public ActionResult SubmitTicket()
-        {
-            return View();
-        }
-
-        public ActionResult Support()
-        {
-            return View();
-        }
+        // Return Feedback page (currently not available)
+        //public ActionResult Feedback()
+        //{
+        //    return View();
+        //}
+        
     }
 }

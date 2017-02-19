@@ -9,25 +9,13 @@ namespace Gradien.Controllers
 {
     public class HomeController : Controller
     {
+        // Returns Home page
         public ActionResult Index()
         {
             return View();
         }
 
-        public ActionResult Login()
-        {
-            ViewBag.Message = "Login page";
-
-            return View();
-        }
-
-        [HttpPost]
-        public ActionResult Login(UserModels user)
-        {
-
-            return View();
-        }
-
+        // Returns About page
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
@@ -35,6 +23,7 @@ namespace Gradien.Controllers
             return View();
         }
 
+        // Returns Contact Us page
         public ActionResult Contact()
         {
             ViewBag.Message = "Contact Us";
@@ -42,16 +31,19 @@ namespace Gradien.Controllers
             return View();
         }
 
+        // Returns Terms of Service page
         public ActionResult Terms()
         {
             return View();
         }
 
+        // Returns Privacy Policy page
         public ActionResult Privacy()
         {
             return View();
         }
 
+        // Returns FAQs page
         public ActionResult FAQ()
         {
             return View();

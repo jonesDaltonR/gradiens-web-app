@@ -302,14 +302,12 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\AdminModels.cs" />
     <Compile Include="Models\BookingModels.cs" />
     <Compile Include="Models\GDbContext.cs" />
     <Compile Include="Models\Hotels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\LocationModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\RegUserModels.cs" />
     <Compile Include="Models\UserModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
