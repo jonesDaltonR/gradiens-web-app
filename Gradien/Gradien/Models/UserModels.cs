@@ -42,7 +42,7 @@ namespace Gradien.Models
 
         [Required]
         [Display(Name = "Date of Birth")]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")] // Only allow Dates
+        [DataType(DataType.Date)] // Only allow Dates
         public DateTime USER_DATE_OF_BIRTH { get; set; }
 
         [Display(Name = "Admin Status")]

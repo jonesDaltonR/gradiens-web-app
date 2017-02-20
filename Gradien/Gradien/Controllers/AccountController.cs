@@ -68,6 +68,13 @@ namespace Gradien.Controllers
             if (login.USER_EMAIL.Equals(user.USER_EMAIL) &&     // Matching user email and password
                 login.USER_PASSWORD.Equals(user.USER_PASSWORD)) // was found in the database
             {
+                if (user.DELETE_STAT == true)
+                {
+                    ModelState.AddModelError(string.Empty, "This account has been disabled.");
+                    login.USER_PASSWORD = string.Empty; // Clear password
+                    return View(login);
+                }
+
                 if (user.ADMIN_CONTROLS == true) // Admin role
                 {
                     string roles = "Admin"; // Administrator
