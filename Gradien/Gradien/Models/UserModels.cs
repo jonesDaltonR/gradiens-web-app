@@ -45,12 +45,6 @@ namespace Gradien.Models
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")] // Only allow Dates
         public DateTime USER_DATE_OF_BIRTH { get; set; }
 
-        [Display(Name = "Payment Method")]
-        public string USER_PAYMENT_METHOD { get; set; }
-
-        [Display(Name = "Home Airport")]
-        public string USER_HOME_AIRPORT { get; set; }
-
         [Display(Name = "Admin Status")]
         public bool ADMIN_CONTROLS { get; set; }
 

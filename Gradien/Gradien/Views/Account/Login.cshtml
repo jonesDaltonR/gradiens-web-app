@@ -32,15 +32,16 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Login" class="btn btn-default" />
+                <input style="margin-left:15px;"class="btn btn-default" type="button" onclick="location.href='@Url.Action("Registration","Account")'" value="Register"/>
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Register", "Registration") <br />
-    @Html.ActionLink("Back to List", "Index", "Home")
+    
+    @Html.ActionLink("Back to Home", "Index", "Home")
 </div>
 
 @section Scripts {
