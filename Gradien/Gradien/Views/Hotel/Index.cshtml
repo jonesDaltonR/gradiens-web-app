@@ -1,56 +1,68 @@
 ﻿@model IEnumerable<Gradien.Models.Hotels>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Search";
 }
 
-<h2>Search</h2>
+<div id="searchPageContent">
+    <fieldset>
+        <!--Searches hotel database-->
+        <h2>Search Hotels</h2>
+        @using (Html.BeginForm("Search", "Hotel"))
+        {
+            List<SelectListItem> list = new List<SelectListItem>();
+            list.Add(new SelectListItem() { Text = "All Locations", Value = "" });
+            list.Add(new SelectListItem() { Text = "Chicago, Illinois", Value = "chicago" });
+            list.Add(new SelectListItem() { Text = "Grand Rapids, Michigan", Value = "grand rapids" });
+            list.Add(new SelectListItem() { Text = "Sydney, Australia", Value = "sydney" });
 
-<style type="text/css">
-    img{
-        max-height:200px;
-        max-width:225px;
-    }
+            @Html.Label("Hotel Name")<br />
+            @Html.TextBox("txtName")<br />
+            <br />
+            @Html.Label("Hotel City")<br />
+            @Html.DropDownList("selectLocation", list)<br />
+            <br />
+            <input type="submit" value="Search" id="btnSubmit" />
+        }
+    </fieldset>
 
-</style>
+    <br />
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.HOTEL_IMAGE)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.HOTEL_NAME)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.HOTEL_CITY)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.HOTEL_STATE)
-        </th>
-        <th></th>
-    </tr>
+    <h2>Results</h2>
+    <!--Sets column names for results table from model variables-->
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.HOTEL_IMAGE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOTEL_NAME)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOTEL_CITY)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOTEL_STATE)
+            </th>
+        </tr>
+        <!--Runs through all items given from HotelController and displays their information to the screen in a table-->
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <img class="hotelImage" src="@Url.Content("~/Images/"+item.HOTEL_IMAGE)" alt="Image" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOTEL_NAME)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOTEL_CITY)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOTEL_STATE)
+                </td>
+            </tr>
+        }
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            <img src="@Url.Content("~/Images/"+item.HOTEL_IMAGE)" alt="Image" />
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.HOTEL_NAME)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.HOTEL_CITY)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.HOTEL_STATE)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.HOTEL_ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.HOTEL_ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.HOTEL_ID })
-        </td>
-    </tr>
-}
-
-</table>
+    </table>
+</div>

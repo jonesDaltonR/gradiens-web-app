@@ -1,75 +1,16 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-<style type="text/css">
-    div.search {
-        width: 47vw;
-        height: 250px;
-        margin: 0 auto;
-        background-color: rgba(35, 35, 35, 0.60);
-    }
 
-    div.recommended {
-        display: block;
-    }
-
-        div.recommended ul {
-            list-style-type: none;
-            margin: 0px;
-            padding: 0px;
-        }
-
-        div.recommended li {
-            display: inline;
-            padding: 35px;
-        }
-
-    div.pictures {
-        width: 100vw;
-        margin: 0 auto;
-    }
-
-    input.btnSubmit {
-        background-color: rgba(35, 35, 35, 1);
-        color: white;
-        border-color: black;
-    }
-</style>
-<script type="text/javascript">
-    /*function showhide(id) {
-        if (id == "btn1") {
-            var elementsToHide = document.querySelectorAll("div.flight,div.fh");
-            var elementsToShow = document.querySelectorAll(".hotel");
-
-            for (var i = 0; i != elementsToHide.length; i++) {
-                elementsToHide[i].style.display = "none";
-            }
-            for (var i = 0; i != elementsToShow.length; i++) {
-                elementsToShow[i].style.display = "inline";
-            }
-        }
-        else if (id == "btn2") {
-            var elementsToHide = document.querySelectorAll("div.fh,div.hotel");
-            var elementsToShow = document.querySelectorAll(".flight");
-
-            for (var i = 0; i != elementsToHide.length; i++) {
-                elementsToHide[i].style.display = "none";
-            }
-            for (var i = 0; i != elementsToShow.length; i++) {
-                elementsToShow[i].style.display = "inline";
-            }
-        }
-    }*/
-
-</script>
 <div class="homecontent">
     <div class="pictures">
-    </div>
-    <div class="search">
-        <!--Search Hotel Database-->
-        <fieldset>
-            <legend>Search Hotel</legend>
-            @using (Html.BeginForm("Index","Hotel"))
+        <!--image element for slideshow-->
+        <img id="slideShowPhoto" src="~/Images/CityRain.jpg" />
+        <div class="search">
+            <!--Search Hotel Database-->
+            <fieldset id="searchField">
+                <legend>Search Hotel</legend>
+                @using (Html.BeginForm("Index", "Hotel"))
             {
                 List<SelectListItem> list = new List<SelectListItem>();
                 list.Add(new SelectListItem() { Text = "All Locations", Value = "" });
@@ -77,21 +18,53 @@
                 list.Add(new SelectListItem() { Text = "Grand Rapids, Michigan", Value = "grand rapids" });
                 list.Add(new SelectListItem() { Text = "Sydney, Australia", Value = "sydney" });
 
-                @Html.Label("Hotel Name")<br />
-                @Html.TextBox("txtName")<br />
-                <br />
-                @Html.Label("Hotel City")<br />
-                @Html.DropDownList("selectLocation", list)<br/>
-                <input type="submit" value="Search" id="btnSearch"/>
-            }
-        </fieldset>
+                    @Html.Label("Hotel Name")<br />
+                    @Html.TextBox("txtName")<br />
+                    <br />
+                    @Html.Label("Hotel City")<br />
+                    @Html.DropDownList("selectLocation", list)<br />
+                    <br />
+                    <input type="submit" value="Search" id="btnSearch" />
+                }
+            </fieldset>
+        </div>
     </div>
+    <script type="text/javascript">
+        //Gets image element with id slideShowPhoto as a variable
+        var photo = document.getElementById("slideShowPhoto");
+        //Creates array to hold url for all images in slideshow
+        var imageArray = ["/Images/CityRain.jpg", "/Images/SnowyCity.jpg", "/Images/Tokyo.jpg", "/Images/Czech.jpg"];
+        //Sets starting index for array
+        var imageIndex = 1;
+
+        //Funtion to change src attribute of the image from the photo variable, and set it to the next image in the array
+        function changeImage() {
+            photo.setAttribute("src", imageArray[imageIndex]);
+            imageIndex++;
+            //Resets imageIndex if it reaches 4
+            if (imageIndex >= imageArray.length)
+                imageIndex = 0;
+        }
+        //Timer, will run the changeImage function every 4000 miliseconds (4 seconds)
+        var intervalHandle = setInterval(changeImage, 4000);
+    </script>
+
+    <br />
+    <br />
+    <!--Was to be a smaller version of a page listing 5-6 popular locations, due to time limitations this was not implemented. Currently just a sample of hotels from database-->
     <div class="recommended">
+        <h3 style="text-indent:10px">Recommended Locations(Not Implemented)</h3>
+        <br />
         <ul>
-            <br/>
-            <li><img src="~/Images/New York.jpg" style="height:200px;width:200px" /></a></li>
-            <li><img src="~/Images/San Fran.jpg" style="height:200px;width:200px" /></li>
-            <li><img src="~/Images/florida.jpeg" style="height:200px;width:200px" /></li>
+            <li class="recommendedText">Amway Hotel</li>
+            <li class="recommendedText">Grand Chicago Hotel</li>
+            <li class="recommendedText">Ritz Carlton Hotel</li>
+        </ul>
+        <ul>
+            
+            <li><img src="~/Images/amway.jpg" /></li>
+            <li><img src="~/Images/grandchicago.jpg" /></li>
+            <li><img src="~/Images/ritz.jpg" /></li>
         </ul>
     </div>
 </div>

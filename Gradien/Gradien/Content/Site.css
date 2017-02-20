@@ -7,6 +7,7 @@
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    max-width:95vw;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -21,4 +22,147 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+div.body-content {
+    margin: 0 auto;
+}
+
+div.headBar {
+    width: 50vw;
+    margin: 0 auto;
+}
+
+ul.headBar {
+    list-style-type: none;
+    width: 50vw;
+    margin: 0 auto;
+    text-align: center;
+}
+
+    ul.headBar li {
+        display: inline;
+        padding: 8px;
+        padding-left: 16px;
+        padding-right: 16px;
+        font-size: 30px;
+        width: 120px;
+        height: 40px;
+        margin: 15px;
+    }
+
+#title {
+    padding-top: 50px;
+    margin-bottom: -25px;
+}
+
+#subTitle {
+    padding-top: 15px;
+    text-indent: 5px;
+}
+
+img.hotelImage {
+    max-height: 200px;
+    max-width: 225px;
+}
+
+ul.footer {
+    list-style-type: none;
+    display: inline;
+}
+
+.column {
+    float: left;
+    margin: 0 60px;
+    font-size: 15px;
+    color: #535353;
+    display: inline-block;
+    opacity: 0.8;
+}
+
+    .column li {
+        padding-bottom: 10px;
+    }
+
+footer {
+    width: 50vw;
+    margin: 0 auto;
+}
+
+div.search {
+    width: 30vw;
+    height: 250px;
+    position: absolute;
+    top: 425px;
+    left: 525px;
+    margin: 0 auto;
+    z-index: 5;
+    background-color: rgba(35, 35, 35, .8);
+    color: white;
+}
+
+#searchField {
+    padding-left: 20px;
+}
+
+    #searchField legend {
+        color: white;
+        text-align: center;
+    }
+
+div.recommended {
+    display: block;
+    margin: 0 auto;
+    width: 55vw;
+}
+
+    div.recommended ul {
+        list-style-type: none;
+        margin: 0px;
+        padding: 0px;
+        font-size: 15px;
+        text-align: center;
+    }
+
+
+
+div.recommended li {
+    display: inline;
+    padding: 35px;
+}
+
+div.recommended li.recommendedText{
+    padding:77px;
+}
+
+#btnSearch {
+    background-color: rgba(35, 35, 35, 1);
+    color: white;
+    border-color: black;
+}
+
+
+#searchPageContent {
+    max-width: 90vw;
+    margin: 0 auto;
+}
+
+div.recommended img {
+    height: 200px;
+    width: 200px;
+}
+
+#slideShowPhoto {
+    width: 800px;
+    height: 500px;
+    text-align: center;
+    margin: 0 auto;
+    position: relative;
+    display: block;
+    z-index: 1;
+}
+
+div.pictures {
+    width: 90vw;
+    margin: 0 auto;
 }

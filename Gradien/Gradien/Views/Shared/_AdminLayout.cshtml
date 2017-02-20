@@ -125,99 +125,54 @@
                 </ol>
             </section>
 
-            <!-- Main content This is the CSS and the html from the _layout so that we have the Admin Skin along with the  -->
             <section class="content">
-                <style type="text/css">
-                    ul.headBar {
-                        list-style-type: none;
-                        max-width: 900px;
-                        margin: 0 auto;
-                    }
+                <img src="~/Images/Logo.png" alt="Gradiens Logo" style="height:150px;width:100px;float:left;margin-right:10px;margin-left:200px" />
+                <h1 id="title">Gradiens</h1>
+                <h4 id="subTitle">A Travel Agency</h4>
+                <br />
+                <div class="headBar">
+                    <ul class="headBar">
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("Contact Us", "Contact", "Support")</li>
 
-                        ul.headBar li {
-                            display: inline;
-                            padding: 8px;
-                            padding-left: 16px;
-                            padding-right: 16px;
-                            font-size: 30px;
-                            width: 120px;
-                            height: 40px;
-                            border: 2px solid blue;
-                            border-radius: 5px;
-                            margin: 15px;
-                        }
-
-                    h1 {
-                        padding-top: 50px;
-                        margin-bottom: -25px;
-                    }
-
-                    h4 {
-                        padding-top: 15px;
-                        text-indent: 5px;
-                    }
-
-                    ul.footer {
-                        list-style-type: none;
-                        display: inline;
-                    }
-
-                    .column {
-                        float: left;
-                        margin: 0 60px;
-                        font-size: 15px;
-                        color: #535353;
-                        display: inline-block;
-                        opacity: 0.8;
-                    }
-
-                        .column li {
-                            padding-bottom: 10px;
-                        }
-
-                    footer {
-                    }
-                </style>
-                    <img src="~/Images/Logo.png" alt="Gradiens Logo" style="height:150px;width:100px;float:left;margin-right:10px;margin-left:200px" />
-                    <h1>Gradiens</h1>
-                    <h4>A Travel Agency</h4>
-                    <br />
-                    <div>
-                        <ul class="headBar">
-                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                            <li>@Html.ActionLink("Contact Us", "Contact", "Support")</li>
+                        <!--Determines if the login or logout link in navigation bar is shown to user. Based on if user is logged in or not-->
+                        @if (Request.IsAuthenticated) // If user is logged in
+                        {
                             <li>@Html.ActionLink("Logout", "Logout", "Account")</li>
-                        </ul>
-                    </div>
-                    <br />
-                    <br />
-                    <div class="container body-content">
-                        @RenderBody()
-                        <hr />
-                        <footer>
-                            <div class="column">
-                                <ul class="footer">
-                                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                                    <li>@Html.ActionLink("About Us", "About", "Home")</li>
-                                </ul>
-                            </div>
-                            <div class="column">
-                                <ul class="footer">
-                                    <li>@Html.ActionLink("Contact Us", "Contact", "Home")</li>
-                                    <li>@Html.ActionLink("FAQs", "FAQ", "Home")</li>
-                                </ul>
-                            </div>
-                            <div class="column">
-                                <ul class="footer">
-                                    <li>@Html.ActionLink("Privacy Policy", "Privacy", "Home")</li>
-                                    <li>@Html.ActionLink("Terms of Service", "Terms", "Home")</li>
-                                </ul>
-                            </div>
-                            <p style="clear:both;text-align:center;">&copy; @DateTime.Now.Year - Gradiens</p>
-                        </footer>
-                    </div>
-                    <!--Bundles where not working had to manually render the Scripts-->             
-
+                        }
+                        @if (!Request.IsAuthenticated) // If user is not logged in
+                        {
+                            <li>@Html.ActionLink("Login", "Login", "Account")</li>
+                        }
+                    </ul>
+                </div>
+                <hr />
+                <br />
+                <div class="body-content">
+                    @RenderBody()
+                    <hr />
+                    <footer>
+                        <div class="column">
+                            <ul class="footer">
+                                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                                <li>@Html.ActionLink("About Us", "About", "Home")</li>
+                            </ul>
+                        </div>
+                        <div class="column">
+                            <ul class="footer">
+                                <li>@Html.ActionLink("Contact Us", "Contact", "Support")</li>
+                                <li>@Html.ActionLink("FAQs", "FAQ", "Home")</li>
+                            </ul>
+                        </div>
+                        <div class="column">
+                            <ul class="footer">
+                                <li>@Html.ActionLink("Privacy Policy", "Privacy", "Home")</li>
+                                <li>@Html.ActionLink("Terms of Service", "Terms", "Home")</li>
+                            </ul>
+                        </div>
+                        <p style="clear:both;text-align:center;">&copy; @DateTime.Now.Year - Gradiens</p>
+                    </footer>
+                </div>
             </section>
 
         </div>
