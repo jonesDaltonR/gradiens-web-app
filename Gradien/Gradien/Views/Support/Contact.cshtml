@@ -1,22 +1,50 @@
 ﻿@{
-    ViewBag.Title = "Contact";
+    ViewBag.Title = "Contact Us";
 }
-<h2>@ViewBag.Message</h2>
+<h2>@ViewBag.Title</h2>
 
-<h3>BPA Chapter: Davenport University-Grand Rapids</h3>
 
-<br/>
-<p>We would love to hear your feed back on our website, along with any problems or concerns you may have faced.</p>
-<h3>Address</h3>
-<address>
-    Davenport University<br />
-    6191 Kraft Ave S.E.<br />
-    Grand Rapids, MI 49512<br />    
-</address>
-<h3>Email</h3>
-<address>
-    <strong>Josh Estrada:</strong>   <a href="mailto:jestrada5@email.davenport.edu">jestrada5@email.davenport.edu</a><br />
-    <strong>Matthew Woodhead:</strong> <a href="mailto:mwoodhead@email.davenport.edu">mwoodhead@email.davenport.edu</a><br/>
-    <strong>Michael Trihn</strong> <a href="mailto:Mtrinh1@email.davenport.edu">Mtrinh1@email.davenport.edu</a><br/>
-    <strong>Dalton Jones</strong> <a href="mailto:djones202@email.davenport.edu">djones202@email.davenport.edu</a>
-</address>
+<p>Use this to form to send us feed back or concerns you have with the website.</p>
+<!--Form for the User to use to send us an email-->
+<br />
+<form class="form-horizontal">
+    <fieldset id="generalInfo">
+        <legend><span>General Information</span></legend>
+
+        <p>Give us useful information like your name and email address so we can have more infomation when contacting you</p>
+
+        <div class="form-group">
+            <!--Name of user-->
+            <label class="control-label col-sm-1" for="idname">
+                Name:
+            </label>
+            <div class="col-sm-3">
+                <input type="text" name="name" id="idname" placeholder="Enter name" class="form-control" />
+            </div>
+            <br />
+        </div>
+        <!--Email of the user-->
+        <div class="form-group">
+
+            <label class="control-label col-sm-1" for="email">
+                Email:
+            </label>
+            <div class="col-sm-4">
+                <input type="email" id="email" placeholder="Enter email address" class="form-control" />
+            </div>
+        </div>
+    </fieldset>
+    <fieldset id="Feedback">
+        <legend><span>Feedback</span></legend>
+
+        <p>Describe the problem you are facing or give us feedback about what you like about our website and what you don't. <br /> The more specific you are about what aspects and page you do/don't like the better we can improve our site!</p>
+        <!--Anything the user wants to let us know about in terms of problems or feed back, will be used as the body portion of the email-->
+        <label>
+            <textarea id="idFeedback" class="form-control" name="feedback" placeholder="Type your feedback here..." rows="8" cols="80"></textarea>
+        </label>
+    </fieldset>
+    <fieldset>
+        <!--ToDo: Figure out a good way to send the form information to the Gradiens support email: contact.Gradiens@gmail.com-->
+        <input type="submit" class="btn btn-info" value="Submit" />
+    </fieldset>
+</form>
