@@ -8,7 +8,7 @@
     <fieldset>
         <!--Searches hotel database-->
         <h2>Search Hotels</h2>
-        @using (Html.BeginForm("Search", "Hotel"))
+        @using (Html.BeginForm("Index", "Hotel"))
         {
             List<SelectListItem> list = new List<SelectListItem>();
             list.Add(new SelectListItem() { Text = "All Locations", Value = "" });

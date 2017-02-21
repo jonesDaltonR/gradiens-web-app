@@ -110,6 +110,10 @@ div.search {
         text-align: center;
     }
 
+    #searchField #txtName{
+        color:black;
+    }
+
 div.recommended {
     display: block;
     margin: 0 auto;
