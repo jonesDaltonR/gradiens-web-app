@@ -9,25 +9,47 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <img src="~/Images/Logo.png" alt="Gradiens Logo" style="height:150px;width:100px;float:left;margin-right:10px;margin-left:200px"/>
-    <h1 id="title">Gradiens</h1>
-    <h4 id="subTitle">A Travel Agency</h4>
-    <br />
-    <div class="headBar">
-        <ul class="headBar">
-            <li>@Html.ActionLink("Home", "Index", "Home")</li>
-            <li>@Html.ActionLink("Contact Us", "Contact", "Support")</li>
+    <div id="header">
+        <img src="~/Images/Logo.png" alt="Gradiens Logo" style="height:150px;width:100px;float:left;margin-right:10px;margin-left:200px" />
+        <h1 id="title">Gradiens</h1>
+        <h4 id="subTitle">A Travel Agency</h4>
+        <br />
+        <div id="headBar">
+            <ul>
+                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                <li>@Html.ActionLink("Contact Us", "Contact", "Support")</li>
 
-            <!--Determines if the login or logout link in navigation bar is shown to user. Based on if user is logged in or not-->
-            @if (Request.IsAuthenticated) // If user is logged in
+                <!--Determines if the login or logout link in navigation bar is shown to user. Based on if user is logged in or not-->
+                @if (Request.IsAuthenticated) // If user is logged in
             {
-                <li>@Html.ActionLink("Logout", "Logout", "Account")</li>
-            }
-            @if (!Request.IsAuthenticated) // If user is not logged in
+                    <li>@Html.ActionLink("Logout", "Logout", "Account")</li>
+                }
+                @if (!Request.IsAuthenticated) // If user is not logged in
             {
-                <li>@Html.ActionLink("Login", "Login", "Account")</li>
-            }
-        </ul>
+                    <li>@Html.ActionLink("Login", "Login", "Account")</li>
+                }
+            </ul>
+        </div>
+    </div>
+    <div id="mobileHeader"class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Gradiens", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
     </div>
     <hr />
     <br />
@@ -35,19 +57,19 @@
         @RenderBody()
         <hr />
         <footer>
-            <div class="column">
+            <div class="col-xs-4">
                 <ul class="footer">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About Us", "About", "Home")</li>
                 </ul>
             </div>
-            <div class="column">
+            <div class="col-xs-4">
                 <ul class="footer">
                     <li>@Html.ActionLink("Contact Us", "Contact", "Support")</li>
                     <li>@Html.ActionLink("FAQs", "FAQ", "Home")</li>
                 </ul>
             </div>
-            <div class="column">
+            <div class="col-xs-4">
                 <ul class="footer">
                     <li>@Html.ActionLink("Privacy Policy", "Privacy", "Home")</li>
                     <li>@Html.ActionLink("Terms of Service", "Terms", "Home")</li>
